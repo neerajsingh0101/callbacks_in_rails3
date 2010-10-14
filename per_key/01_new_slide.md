@@ -60,6 +60,7 @@
 
     value = yield if block_given? && !halted
     halted ? false : (block_given? ? value : true)
+
     # notice that index is direcly called here
     # no trace of method edit
 
