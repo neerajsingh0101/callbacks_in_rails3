@@ -7,5 +7,5 @@
 
 #Slides are available online#
 
-## [http://callbacks-are-calling.heroku.com](http://callbacks-are-calling.heroku.com)  ##
+## [http://callbacks-in-rails3.heroku.com](http://callbacks-in-rails3.heroku.com)  ##
 
