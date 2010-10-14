@@ -1,4 +1,4 @@
-#Slides available online [http://callbacks-in-rails3.heroku.com](http://callbacks-are-calling.heroku.com)
+#Slides available online [http://callbacks-in-rails3.heroku.com](http://callbacks-in-rails3.heroku.com)
 
 
 ##You can view this presentation by install gem showoff##
