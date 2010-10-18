@@ -11,4 +11,6 @@
 And then open [http://localhost:9090](http://localhost:9090) in your browser.
 
 
+##This presentation is powered by awesome gem [showoff](http://github.com/schacon/showoff) ##
+
 
