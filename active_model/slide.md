@@ -218,6 +218,10 @@
     value = yield if block_given? && !halted
     halted ? false : (block_given? ? value : true)
 
+!SLIDE 
+#Quiz#
+## If a before_filter returns false in a controller then will the filter chain halt?##
+
 !SLIDE smaller
 #In ActionPack#
     @@@ ruby

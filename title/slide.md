@@ -12,3 +12,7 @@
 
 !SLIDE full-page
 ![rails_contribution](rails_contributions.jpeg)
+
+!SLIDE center
+# jquery-ujs #
+# admin_data #

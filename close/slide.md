@@ -1,6 +1,4 @@
 !SLIDE
-#Please do provide feedback#
-#[http://speakerrate.com/4817](http://speakerrate.com/talks/4817)#
 #@neerajdotname#
 
 !SLIDE
