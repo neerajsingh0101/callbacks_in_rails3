@@ -1,5 +1,5 @@
 !SLIDE
-#Please provide feedback at#
+#Feedback at#
 #@neerajdotname#
 
 !SLIDE

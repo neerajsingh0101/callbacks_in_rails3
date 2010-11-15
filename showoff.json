@@ -1,9 +1,9 @@
 [
-  {"section":"title"},
-  {"section":"problem"},
+  {"section":"introduction"},
+  {"section":"problem_definition"},
   {"section":"active_model"},
   {"section":"per_key"},
   {"section":"from_rails"},
   {"section":"order_matters"},
-  {"section":"close"}
+  {"section":"ending"}
 ]
