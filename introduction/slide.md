@@ -11,8 +11,10 @@
 # @neerajdotname #
 
 !SLIDE full-page
-![rails_contribution](rails_contributions.jpeg)
+![rails_contribution](Rails_Contributors_-_All_time.jpg)
+
+!SLIDE full-page
+![jquery-ujs](jquery-ujs.jpg)
 
 !SLIDE center
-# jquery-ujs #
 # admin_data #
