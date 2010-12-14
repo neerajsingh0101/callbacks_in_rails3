@@ -8,45 +8,45 @@
 
     @@@ ruby
     class User
-    
+
     end
 
- 
+
 !SLIDE small
 
     @@@ ruby
     class User
-      
+
       include ActiveSupport::Callbacks
-    
+
     end
 
 !SLIDE small
 
     @@@ ruby
     class User
-      
+
       include ActiveSupport::Callbacks
 
       define_callbacks :validate
-    
+
     end
 
 !SLIDE small
 
     @@@ ruby
     class User
-      
+
       include ActiveSupport::Callbacks
 
       define_callbacks :validate
 
       set_callback :validate, :before, :check_everything
-    
+
     end
 
 
-!SLIDE small 
+!SLIDE small
 
     @@@ ruby
     class User
@@ -59,11 +59,11 @@
 
       def check_everything
         puts 'checking'
-      end 
+      end
     end
 
 
-!SLIDE small 
+!SLIDE small
 
     @@@ ruby
     class User
@@ -80,11 +80,11 @@
 
       def validate
         self.send(:_run_validate_callbacks)
-      end 
+      end
     end
 
 
-!SLIDE small 
+!SLIDE small
 
     @@@ ruby
     value = nil
@@ -98,10 +98,10 @@
     value = yield if block_given? && !halted
     halted ? false : (block_given? ? value : true)
 
-!SLIDE 
+!SLIDE
 # try two callbacks #
 
-!SLIDE small 
+!SLIDE small
 
     @@@ ruby
     class User
@@ -150,7 +150,7 @@
 
       set_callback :validate, :before,  :check_everything1
 
-      set_callback :validate, :before,  :check_everything2, 
+      set_callback :validate, :before,  :check_everything2,
                                         :prepend => true
 
       def check_everything1; puts 'checking1'; end
@@ -189,7 +189,7 @@
     class User
       include ActiveSupport::Callbacks
 
-      define_callbacks  :validate, 
+      define_callbacks  :validate,
                         :terminator => "result == false"
 
       set_callback :validate, :before, :check_everything1
@@ -217,10 +217,6 @@
 
     value = yield if block_given? && !halted
     halted ? false : (block_given? ? value : true)
-
-!SLIDE 
-#Quiz#
-## If a before_filter returns false in a controller then will the filter chain halt?##
 
 !SLIDE smaller
 #In ActionPack#
@@ -252,7 +248,7 @@
 
       define_callbacks  :validate, :terminator => "result == false"
 
-      set_callback :validate, :before,  :check_everything1, 
+      set_callback :validate, :before,  :check_everything1,
                                         :if => "10 > 6"
 
       set_callback :validate, :before, :check_everything2
@@ -293,10 +289,10 @@
     class User
       include ActiveSupport::Callbacks
       define_callbacks :validate, :terminator => "result == false"
-      set_callback :validate, :before,  :check_everything1, 
+      set_callback :validate, :before,  :check_everything1,
                                         :if => " 10 > 6"
 
-      set_callback :validate, :before,  :check_everything2, 
+      set_callback :validate, :before,  :check_everything2,
                                         :prepend => true
 
       def check_everything1; puts 'checking1'; end
@@ -335,7 +331,7 @@
       include ActiveSupport::Callbacks
       define_callbacks :validate, :terminator => "result == false"
 
-      set_callback :validate, :before,  :check_everything1, 
+      set_callback :validate, :before,  :check_everything1,
                                         :if => " 10 > 6"
 
       set_callback :validate, :before, :check_everything2
@@ -345,7 +341,7 @@
     end
 
     class Person < User
-      skip_callback :validate, :before, :check_everything1, 
+      skip_callback :validate, :before, :check_everything1,
                                         :if => '100 > 60'
     end
 
@@ -369,7 +365,7 @@
     value = yield if block_given? && !halted
     halted ? false : (block_given? ? value : true)
 
-!SLIDE 
+!SLIDE
 # if a proc is used as target then compiled method calls a dynamically created method #
 
 !SLIDE smaller
