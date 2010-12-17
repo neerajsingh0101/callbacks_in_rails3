@@ -351,17 +351,18 @@
     value = nil
     halted = false
 
-    unless halted
-      result = check_everything2
-      halted = (result == false)
-    end
-
     if ( 10 > 6) && !(100 > 60)
       unless halted
         result = check_everything1
         halted = (result == false)
       end
     end
+
+    unless halted
+      result = check_everything2
+      halted = (result == false)
+    end
+
     value = yield if block_given? && !halted
     halted ? false : (block_given? ? value : true)
 
@@ -394,4 +395,36 @@
     value = yield if block_given? && !halted
     halted ? false : (block_given? ? value : true)
 
+!SLIDE smaller
+    @@@ ruby
+    class User
+      include ActiveSupport::Callbacks
+      define_callbacks :validate, :rescuable => true
 
+      set_callback :validate, :before, :check_everything1
+      set_callback :validate, :after, :check_everything2
+
+      def validate
+        self.send(:_run_validate_callbacks) do
+          raise 'boom'
+        end
+      end
+
+!SLIDE smaller
+    @@@ruby
+    value = nil
+    halted = false
+    unless halted
+      result = check_everything1
+      halted = (false)
+    end
+
+    rescued_error = nil
+    begin
+      value = yield if block_given? && !halted
+    rescue Exception => e
+      rescued_error = e
+    end
+    check_everything2
+    raise rescued_error if rescued_error
+    halted ? false : (block_given? ? value : true)

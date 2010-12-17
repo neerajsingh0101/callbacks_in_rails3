@@ -7,7 +7,7 @@
     $ git clone git://github.com/neerajdotname/callbacks_in_rails3.git
     $ cd callbacks_in_rails3
     $ showoff serve
-    
+
 And then open [http://localhost:9090](http://localhost:9090) in your browser.
 
 
@@ -15,4 +15,3 @@ And then open [http://localhost:9090](http://localhost:9090) in your browser.
 
 ### notes for self ###
 * git push heroku master to update the heroku app.
-
